@@ -1,0 +1,31 @@
+.isdecimal() -> 0-9인지 확인
+.isdigit() -> 숫자형태
+
+a = [list(map(int,input().split())) for _ in range(n)]
+
+if all():  -> 모든 조건이 참일 경우
+
+s[i:i+2].isalpha() -> 문자열 중 2문자씩 , 문자로 되어있는지 확인
+
+
+import math
+math.floor() :  소수점 아래 버리기
+
+탐색 -> DFS / BFS -> 자료구조 (스택, 큐, 재귀함수)
+스택 - 리스트 이용 , append(), pop()
+큐 - deque 라이브러리 사용, append(), popleft(), list(queue) : 리스트 자료형으로 반환
+재귀함수 - 종료 조건 꼭 명시
+
+
+from fractions import gcd
+
+
+제곱근 
+n ** (1/2)
+
+
+정렬 반대로
+a.sort(reverse=True)
+
+
+list(map(int,str(n)))
