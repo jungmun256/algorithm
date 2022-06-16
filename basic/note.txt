@@ -18,7 +18,7 @@ math.floor() :  소수점 아래 버리기
 
 
 from fractions import gcd
-
+from math import gcd
 
 제곱근 
 n ** (1/2)
@@ -29,3 +29,77 @@ a.sort(reverse=True)
 
 
 list(map(int,str(n)))
+
+
+sorted(정렬할 문자열, key = lambda x:x[n])
+
+calendear함수
+import calendear
+week_list = ['MON','TUE','WED','THU','FRI','SAT','SUN']
+week_list[calendear.weekday(2016,5,24)]
+
+3진법 변환
+def solution(n,q):
+    rev_base = ''
+    while n > 0:
+        n, mod = divmod(n,q)
+        rev_base += str(mod)
+    return rev_base[::-1]
+
+
+n 진수로 바꾸기
+int(바꿀 숫자, n진수)
+
+str(bin(i|j))[2:]
+
+
+ord(문자)
+ ord('a') -> 정수 97 반환
+chr(정수)
+ chr(97) -> 문자 'a' 반환
+
+
+에라토스테네스의 체
+1. 2부터 N까지의 모든 자연수를 나열한다.
+2. 남은 수 중에서 아직 처리하지 않은 가장 작은 수 i를 찾는다.
+3. 남은 수 중에서 i의 배수를 모두 제거한다. (i는 제거하지 않는다.)
+4. 더 이상 반복할 수 없을 때까지 2번과 3번의 과정을 반복한다.
+
+피보나치 (런타임 오류 나지 않기 위해)
+
+def solution(n):
+    answer = [0 for _ in range(n+1)]
+    answer[1] = 1
+
+    for i in range(2,n+1):
+        answer[i] = (answer[i-1] + answer[i-2]) % 1234567
+                                          # 피보나치 수가 n에 따라서 점점 많이 커지기 때문에 표현할 수 있는 범위를 넘어갈 수 있기 때문이다.
+    return answer[i]
+
+
+
+
+데크(deque) ? 
+- 양방향 큐
+- 앞, 뒤 양쪽 방향에서 엘리먼트(element)를 추가하거나 제거할 수 있다.
+- O(1)로 접근 가능
+- deque.rotate(num): 데크를 num만큼 회전한다(양수면 오른쪽, 음수면 왼쪽).
+
+from collections import deque
+
+q = deque()
+q.appendleft(10)
+q.append(0)
+q.popleft()
+q.pop()
+
+
+
+문자열 s를 왼쪽으로 x칸만큼 회전
+temp = list(s)
+temp.append(temp.pop(0))
+
+
+
+math.floor(len(inter)/len(uni)*65536)
+
